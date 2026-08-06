@@ -1,5 +1,481 @@
-Airin Akter Tania - Portfolio
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Airin Akter Tania — Researcher</title>
+<meta name="description" content="Airin Akter Tania — researcher in geometry-aware deep learning, computer vision, and biomedical signal processing. PhD applicant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F5F6F4;
+    --paper-2:#EFF1EE;
+    --ink:#14243C;
+    --ink-soft:#3A4A60;
+    --muted:#6C7789;
+    --line:#D9DDD7;
+    --accent:#2E6F6B;
+    --accent-soft:#2e6f6b1a;
+    --maxw:940px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Inter",system-ui,sans-serif;font-size:16px;line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  ::selection{background:var(--accent-soft);}
 
+  /* ---- nav ---- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(245,246,244,0.82);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--maxw);margin:0 auto;padding:14px 28px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  .nav-name{font-family:"Fraunces",serif;font-weight:600;font-size:17px;letter-spacing:.2px;text-decoration:none;}
+  .nav-links{display:flex;gap:22px;flex-wrap:wrap;}
+  .nav-links a{
+    font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.3px;
+    text-decoration:none;color:var(--muted);transition:color .2s;
+  }
+  .nav-links a:hover{color:var(--accent);}
+  .nav-toggle{display:none;}
 
-    Welcome to my academic portfolio
-    This site is currently under construction.
+  /* ---- layout ---- */
+  section{max-width:var(--maxw);margin:0 auto;padding:64px 28px;}
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:2px;
+    text-transform:uppercase;color:var(--accent);margin:0 0 22px;
+    display:flex;align-items:center;gap:14px;
+  }
+  .eyebrow::after{content:"";flex:1;height:1px;background:var(--line);}
+
+  /* ---- hero ---- */
+  .hero{position:relative;overflow:hidden;padding-top:78px;padding-bottom:70px;}
+  .hero-motif{
+    position:absolute;inset:0;z-index:0;pointer-events:none;
+    opacity:.5;
+  }
+  .hero-inner{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:0 28px;
+    display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;}
+  .hero h1{
+    font-family:"Fraunces",serif;font-weight:600;
+    font-size:clamp(2.6rem,6vw,4.1rem);line-height:1.02;letter-spacing:-.5px;
+    margin:0 0 6px;
+  }
+  .hero .role{font-size:1.02rem;color:var(--ink-soft);margin:0 0 20px;font-weight:500;}
+  .hero .thesis{font-size:1.14rem;line-height:1.6;color:var(--ink-soft);max-width:44ch;margin:0 0 26px;}
+  .portrait{
+    width:150px;height:150px;border-radius:50%;flex:none;
+    background:
+      radial-gradient(circle at 30% 28%, #ffffff, var(--paper-2) 62%);
+    border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+    font-family:"Fraunces",serif;font-size:2.6rem;color:var(--accent);
+    box-shadow:0 6px 30px -18px #14243c66;overflow:hidden;
+  }
+  .portrait img{width:100%;height:100%;object-fit:cover;display:block;}
+  .links{display:flex;flex-wrap:wrap;gap:10px;}
+  .chip{
+    font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.2px;
+    text-decoration:none;color:var(--ink);
+    border:1px solid var(--line);border-radius:999px;padding:7px 15px;
+    display:inline-flex;align-items:center;gap:7px;transition:all .2s;background:#fff9;
+  }
+  .chip:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px);}
+  .chip svg{width:14px;height:14px;}
+
+  /* ---- interests ---- */
+  .interest-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .interest{background:var(--paper);padding:22px 24px;}
+  .interest h3{margin:0 0 6px;font-size:1.02rem;font-weight:600;font-family:"Fraunces",serif;}
+  .interest p{margin:0;font-size:.94rem;color:var(--muted);line-height:1.55;}
+
+  /* ---- publications ---- */
+  .pub{
+    display:grid;grid-template-columns:56px 1fr;gap:20px;
+    padding:22px 0;border-top:1px solid var(--line);
+  }
+  .pub:last-child{border-bottom:1px solid var(--line);}
+  .pub-id{
+    font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--accent);
+    font-weight:500;padding-top:2px;
+  }
+  .pub-title{font-weight:600;font-size:1.02rem;line-height:1.4;margin:0 0 5px;color:var(--ink);}
+  .pub-authors{font-size:.92rem;color:var(--ink-soft);margin:0 0 4px;}
+  .pub-authors b{color:var(--ink);font-weight:600;}
+  .pub-venue{font-size:.9rem;color:var(--muted);font-style:italic;margin:0;}
+  .badge{
+    font-family:"IBM Plex Mono",monospace;font-style:normal;font-size:10.5px;letter-spacing:.5px;
+    text-transform:uppercase;padding:2px 8px;border-radius:4px;margin-left:8px;vertical-align:1px;
+  }
+  .badge.review{background:#8a5a0015;color:#8a5a00;border:1px solid #8a5a0033;}
+  .badge.pub{background:var(--accent-soft);color:var(--accent);border:1px solid #2e6f6b33;}
+
+  /* ---- timeline (experience / education) ---- */
+  .entry{padding:20px 0;border-top:1px solid var(--line);}
+  .entry:first-of-type{border-top:none;}
+  .entry-head{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:baseline;}
+  .entry-role{font-weight:600;font-size:1.03rem;margin:0;}
+  .entry-where{color:var(--ink-soft);font-size:.95rem;}
+  .entry-date{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--muted);white-space:nowrap;}
+  .entry-sub{font-size:.9rem;color:var(--muted);font-style:italic;margin:2px 0 10px;}
+  .entry ul{margin:10px 0 0;padding-left:18px;}
+  .entry li{font-size:.95rem;color:var(--ink-soft);margin:5px 0;line-height:1.55;}
+  .entry li b{color:var(--ink);font-weight:600;}
+
+  /* ---- awards ---- */
+  .award{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;
+    padding:15px 0;border-top:1px solid var(--line);}
+  .award:last-child{border-bottom:1px solid var(--line);}
+  .award-name{font-weight:600;font-size:.99rem;}
+  .award-desc{font-size:.9rem;color:var(--muted);margin-top:2px;}
+  .award-date{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--muted);}
+
+  /* ---- skills ---- */
+  .skills-grid{display:grid;grid-template-columns:150px 1fr;gap:12px 26px;}
+  .skills-grid dt{font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.4px;
+    color:var(--accent);text-transform:uppercase;padding-top:3px;}
+  .skills-grid dd{margin:0;font-size:.96rem;color:var(--ink-soft);}
+
+  /* ---- references / footer ---- */
+  .ref-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;}
+  .ref{border:1px solid var(--line);border-radius:10px;padding:20px 22px;background:#fff8;}
+  .ref h4{margin:0 0 4px;font-size:1rem;font-weight:600;}
+  .ref p{margin:2px 0;font-size:.9rem;color:var(--muted);line-height:1.5;}
+  .ref a{color:var(--accent);text-decoration:none;}
+
+  footer{background:var(--ink);color:#C9D2DE;margin-top:40px;}
+  .footer-inner{max-width:var(--maxw);margin:0 auto;padding:44px 28px;
+    display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
+  .footer-inner h3{font-family:"Fraunces",serif;color:#fff;margin:0 0 6px;font-size:1.3rem;}
+  .footer-inner p{margin:0;font-size:.9rem;color:#9AA6B6;}
+  .footer-links{display:flex;gap:14px;flex-wrap:wrap;}
+  .footer-links a{color:#C9D2DE;font-family:"IBM Plex Mono",monospace;font-size:12.5px;
+    text-decoration:none;border-bottom:1px solid #ffffff22;padding-bottom:2px;transition:color .2s;}
+  .footer-links a:hover{color:#fff;}
+
+  @media (max-width:760px){
+    .hero-inner{grid-template-columns:1fr;}
+    .portrait{order:-1;width:110px;height:110px;font-size:2rem;}
+    .interest-grid{grid-template-columns:1fr;}
+    .ref-grid{grid-template-columns:1fr;}
+    .skills-grid{grid-template-columns:1fr;gap:4px 0;}
+    .skills-grid dt{padding-top:14px;}
+    .nav-links{display:none;position:absolute;top:100%;left:0;right:0;
+      flex-direction:column;background:var(--paper);border-bottom:1px solid var(--line);
+      padding:14px 28px;gap:14px;}
+    .nav-links.open{display:flex;}
+    .nav-toggle{display:block;background:none;border:1px solid var(--line);border-radius:6px;
+      padding:6px 10px;font-family:"IBM Plex Mono",monospace;font-size:12px;cursor:pointer;color:var(--ink);}
+    section{padding:48px 24px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none!important;animation:none!important;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#top" class="nav-name">Airin Akter Tania</a>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="document.getElementById('navlinks').classList.toggle('open')">menu</button>
+    <div class="nav-links" id="navlinks">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#awards">Awards</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <svg class="hero-motif" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="none" stroke="#2E6F6B" stroke-width="1">
+      <ellipse cx="900" cy="250" rx="120" ry="70" transform="rotate(-18 900 250)" opacity="0.30"/>
+      <ellipse cx="900" cy="250" rx="200" ry="120" transform="rotate(-18 900 250)" opacity="0.24"/>
+      <ellipse cx="900" cy="250" rx="290" ry="175" transform="rotate(-18 900 250)" opacity="0.18"/>
+      <ellipse cx="900" cy="250" rx="390" ry="235" transform="rotate(-18 900 250)" opacity="0.13"/>
+      <ellipse cx="900" cy="250" rx="500" ry="300" transform="rotate(-18 900 250)" opacity="0.09"/>
+      <ellipse cx="900" cy="250" rx="620" ry="370" transform="rotate(-18 900 250)" opacity="0.06"/>
+    </g>
+  </svg>
+  <div class="hero-inner">
+    <div>
+      <h1>Airin Akter&nbsp;Tania</h1>
+      <p class="role">Lecturer, Dept. of Electrical &amp; Electronic Engineering — Northern University, Bangladesh</p>
+      <p class="thesis">I build geometry-aware deep learning models — for exposure correction, EEG, and generative flows — that respect the structure of the data they learn from.</p>
+      <div class="links">
+        <a class="chip" href="mailto:airinaktertania18@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+          Email</a>
+        <a class="chip" href="https://scholar.google.com/citations?user=5FUFNY4AAAAJ&hl=en" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 1 8l11 6 9-4.9V17h2V8L12 2zM5 13.2V17c0 1.6 3.1 3 7 3s7-1.4 7-3v-3.8l-7 3.8-7-3.6z"/></svg>
+          Google Scholar</a>
+        <a class="chip" href="https://github.com/airinaktertania" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.6.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.5-1.3.1-2.7 0 0 .8-.3 2.7 1a9.3 9.3 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .6 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10.2 10.2 0 0 0 22 12.2C22 6.6 17.5 2 12 2z"/></svg>
+          GitHub</a>
+        <a class="chip" href="tel:+8801516060292">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+          +880 1516-060292</a>
+      </div>
+    </div>
+    <div class="portrait" id="portrait">
+      <span id="portrait-fallback">AT</span>
+    </div>
+  </div>
+</header>
+
+<section id="research">
+  <p class="eyebrow">Research Interests</p>
+  <div class="interest-grid">
+    <div class="interest">
+      <h3>Exposure-Aware Vision</h3>
+      <p>Deep learning for low- and high-light image enhancement, single-shot exposure correction, and object detection under difficult lighting.</p>
+    </div>
+    <div class="interest">
+      <h3>Geometry-Preserving Networks</h3>
+      <p>Riemannian representation learning and equivariant networks on the SPD manifold for structured, covariance-based data.</p>
+    </div>
+    <div class="interest">
+      <h3>Biomedical Signals</h3>
+      <p>EEG-based emotion recognition, time–frequency analysis, and attention–graph fusion models for physiological data.</p>
+    </div>
+    <div class="interest">
+      <h3>Generative Modelling</h3>
+      <p>Conditional flow matching, difficulty-calibrated interpolation paths, and efficient sampling for generative image models.</p>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <p class="eyebrow">Publications</p>
+
+  <div class="pub">
+    <div class="pub-id">[J1]</div>
+    <div>
+      <p class="pub-title">AutoLumNet: Monotone Optimal Transport for Single-Shot Exposure Correction<span class="badge review">Under Review</span></p>
+      <p class="pub-authors"><b>A. A. Tania</b>, M. R. Khan, M. Ahmad <span style="color:var(--muted)">(equal contribution)</span></p>
+      <p class="pub-venue">IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI) · 2026</p>
+    </div>
+  </div>
+
+  <div class="pub">
+    <div class="pub-id">[J2]</div>
+    <div>
+      <p class="pub-title">DAFNet: A Dual-Path Attention Fusion Network for EEG Emotion Recognition via CNN and Graph-Based Global Modeling<span class="badge pub">Published</span></p>
+      <p class="pub-authors">M. R. Khan, <b>A. A. Tania</b>, T. A. Bushra, J. Pritha, M. Ahmad</p>
+      <p class="pub-venue">Array (Elsevier) · June 2025</p>
+    </div>
+  </div>
+
+  <div class="pub">
+    <div class="pub-id">[J3]</div>
+    <div>
+      <p class="pub-title">A Comparative Study of Time–Frequency Features Based Spatio-Temporal Analysis with Varying Multiscale Kernels for Emotion Recognition from EEG<span class="badge pub">Published</span></p>
+      <p class="pub-authors">M. R. Khan, <b>A. A. Tania</b>, M. Ahmad</p>
+      <p class="pub-venue">Biomedical Signal Processing and Control (Elsevier) · March 2025</p>
+    </div>
+  </div>
+
+  <div class="pub">
+    <div class="pub-id">[C1]</div>
+    <div>
+      <p class="pub-title">Equivariant Geodesic Networks: End-to-End Classification on the SPD Manifold<span class="badge review">Under Review</span></p>
+      <p class="pub-authors"><b>A. A. Tania</b>, M. R. Khan, M. Ahmad</p>
+      <p class="pub-venue">41st AAAI Conference on Artificial Intelligence (AAAI-27) · 2026</p>
+    </div>
+  </div>
+
+  <div class="pub">
+    <div class="pub-id">[C2]</div>
+    <div>
+      <p class="pub-title">Difficulty-Calibrated Interpolation Paths for Conditional Flow Matching<span class="badge review">Under Review</span></p>
+      <p class="pub-authors"><b>A. A. Tania</b></p>
+      <p class="pub-venue">3rd IEEE Int. Conference on Computing, Applications and Systems (COMPAS) · 2026</p>
+    </div>
+  </div>
+
+  <div class="pub">
+    <div class="pub-id">[C3]</div>
+    <div>
+      <p class="pub-title">Custom Dataset-Driven Unsupervised Low-Light Image Enhancement using 2D CNN<span class="badge pub">Published</span></p>
+      <p class="pub-authors"><b>A. A. Tania</b>, M. R. Khan, M. Ahmad</p>
+      <p class="pub-venue">IEEE Int. Conference on Quantum Photonics, Artificial Intelligence, and Networking (QPAIN) · August 2025</p>
+    </div>
+  </div>
+
+  <div class="pub">
+    <div class="pub-id">[C4]</div>
+    <div>
+      <p class="pub-title">Smart Classroom Automation: A Fusion of AI with Voice, Gesture, and Face Recognition Attendance System<span class="badge pub">Published</span></p>
+      <p class="pub-authors">M. R. Khan, A. A. Ahad, <b>A. A. Tania</b>, T. Das, B. Das</p>
+      <p class="pub-venue">IEEE Int. Conference on Advances in Computing, Communication, Electrical, and Smart Systems (iCACCESS) · March 2024</p>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <p class="eyebrow">Research Experience</p>
+
+  <div class="entry">
+    <div class="entry-head">
+      <p class="entry-role">Undergraduate Thesis Researcher <span class="entry-where">— Dept. of EEE, KUET</span></p>
+      <span class="entry-date">Jan 2023 – Feb 2024</span>
+    </div>
+    <p class="entry-sub">Supervisor: Prof. Dr. Mohiuddin Ahmad</p>
+    <ul>
+      <li>Developed deep learning architectures for joint low- and high-exposure image enhancement, culminating in the <b>AutoLumNet</b> framework [J1].</li>
+      <li>Proposed a bi-branch, exposure-aware design coupling unsupervised correction with perceptual optimisation, removing the need for paired exposure supervision.</li>
+      <li>Built and curated a custom multi-exposure dataset; designed the evaluation protocol and ran full-resolution benchmarking against state-of-the-art baselines.</li>
+      <li>Led manuscript preparation, figure design, and citation auditing for submissions to IEEE TPAMI and IEEE QPAIN.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head">
+      <p class="entry-role">Independent Research Collaborator <span class="entry-where">— Riemannian Learning &amp; Generative Modelling</span></p>
+      <span class="entry-date">2024 – Present</span>
+    </div>
+    <ul>
+      <li>Designed equivariant network layers on the SPD manifold with geodesic prototype heads for end-to-end classification of covariance-structured EEG and vision data [C1].</li>
+      <li>Developed difficulty-calibrated interpolation paths for conditional flow matching, improving sample quality under constrained sampling budgets [C2].</li>
+      <li>Implemented and benchmarked models in PyTorch across multi-GPU environments with reproducible, released research code.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="education" style="padding-top:0;">
+  <p class="eyebrow">Education</p>
+  <div class="entry">
+    <div class="entry-head">
+      <p class="entry-role">B.Sc. in Electrical and Electronic Engineering</p>
+      <span class="entry-date">Jan 2019 – Mar 2024</span>
+    </div>
+    <p class="entry-sub">Khulna University of Engineering and Technology (KUET), Bangladesh</p>
+    <ul>
+      <li><b>CGPA 3.75 / 4.00</b> — Top 12%, Rank 19 of 149.</li>
+      <li>Thesis: <i>Custom Dataset-driven Unsupervised Low-Light and High-Light Image Enhancement with Object Detection Integration using CNN.</i></li>
+    </ul>
+  </div>
+</section>
+
+<section id="teaching" style="padding-top:0;">
+  <p class="eyebrow">Teaching</p>
+  <div class="entry">
+    <div class="entry-head">
+      <p class="entry-role">Lecturer <span class="entry-where">— Dept. of EEE, Northern University, Bangladesh</span></p>
+      <span class="entry-date">Jan 2025 – Present</span>
+    </div>
+    <ul>
+      <li><b>Electrical Engineering &amp; Circuit Analysis</b> — lectures on electrical laws, network theorems, and steady-state circuit analysis; assignment and assessment design.</li>
+      <li><b>Circuit Analysis Laboratory</b> — weekly lab sessions, experiment sheets, and student report evaluation.</li>
+      <li><b>Electronic Engineering</b> — semiconductor devices and analogue electronics; supervision of student projects.</li>
+      <li><b>Electronic Engineering Laboratory</b> — hands-on circuit-building experiments and end-of-term project demonstrations.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="awards" style="padding-top:0;">
+  <p class="eyebrow">Awards &amp; Honours</p>
+  <div class="award">
+    <div>
+      <div class="award-name">University Dean's Scholarship — KUET</div>
+      <div class="award-desc">For maintaining a CGPA above 3.75 throughout the 4th academic year.</div>
+    </div>
+    <span class="award-date">2023–2024</span>
+  </div>
+  <div class="award">
+    <div>
+      <div class="award-name">Departmental Merit Scholarship — Dept. of EEE, KUET</div>
+      <div class="award-desc">Received seven times for ranking among the top students in the department.</div>
+    </div>
+    <span class="award-date">2020–2024</span>
+  </div>
+  <div class="award">
+    <div>
+      <div class="award-name">Silver Medal — International Astronomy &amp; Astrophysics Competition (IAAC)</div>
+    </div>
+    <span class="award-date">2022</span>
+  </div>
+  <div class="award">
+    <div>
+      <div class="award-name">Certificate of Achievement — Regional Math Challenge</div>
+    </div>
+    <span class="award-date">2021</span>
+  </div>
+</section>
+
+<section id="skills" style="padding-top:0;">
+  <p class="eyebrow">Technical Skills</p>
+  <dl class="skills-grid">
+    <dt>Programming</dt><dd>Python, C++, MATLAB</dd>
+    <dt>Frameworks</dt><dd>PyTorch, TensorFlow, Keras, scikit-learn, NumPy, pandas, OpenCV, MNE, Matplotlib, seaborn</dd>
+    <dt>Tools</dt><dd>LaTeX, Git / GitHub, Linux, Jupyter, MS Office</dd>
+    <dt>Methods</dt><dd>Deep learning model design, Riemannian geometry for ML, EEG / biosignal preprocessing, multi-GPU training, reproducible benchmarking, technical writing &amp; peer review</dd>
+  </dl>
+</section>
+
+<section id="references" style="padding-top:0;">
+  <p class="eyebrow">References</p>
+  <div class="ref-grid">
+    <div class="ref">
+      <h4>Prof. Dr. Mohiuddin Ahmad</h4>
+      <p>Professor, Dept. of Electrical &amp; Electronic Engineering</p>
+      <p>Khulna University of Engineering &amp; Technology (KUET), Bangladesh</p>
+      <p><a href="mailto:ahmad@eee.kuet.ac.bd">ahmad@eee.kuet.ac.bd</a></p>
+    </div>
+    <div class="ref">
+      <h4>Prof. Dr. Kalyan Kumar Halder</h4>
+      <p>Professor, Dept. of Electrical &amp; Electronic Engineering</p>
+      <p>Khulna University of Engineering &amp; Technology (KUET), Bangladesh</p>
+      <p><a href="mailto:kalyan@eee.kuet.ac.bd">kalyan@eee.kuet.ac.bd</a></p>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="footer-inner">
+    <div>
+      <h3>Let's talk research.</h3>
+      <p>Open to PhD positions in machine learning, computer vision, and biomedical signal processing.</p>
+    </div>
+    <div class="footer-links">
+      <a href="mailto:airinaktertania18@gmail.com">airinaktertania18@gmail.com</a>
+      <a href="https://scholar.google.com/citations?user=5FUFNY4AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+      <a href="https://github.com/airinaktertania" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Swap in a real portrait if profile.jpg exists in the repo; otherwise keep initials.
+  (function(){
+    var img = new Image();
+    img.onload = function(){
+      var p = document.getElementById('portrait');
+      p.innerHTML = '';
+      img.alt = 'Airin Akter Tania';
+      p.appendChild(img);
+    };
+    img.src = 'profile.jpg';
+  })();
+  // Close mobile menu after a nav tap.
+  document.querySelectorAll('#navlinks a').forEach(function(a){
+    a.addEventListener('click', function(){ document.getElementById('navlinks').classList.remove('open'); });
+  });
+</script>
+</body>
+</html>
